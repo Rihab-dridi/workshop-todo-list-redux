@@ -1,4 +1,4 @@
-import { DELETETODO } from "./action-types"
+import { DELETETODO,DONETODO } from "./action-types"
 
 const initialState={
     todos:[
@@ -12,7 +12,8 @@ const initialState={
           text: "save the world ",
           isDone: false,
         },
-      ]
+      ], 
+      filter:''
 }
 
 const todosReducer=(state=initialState, action)=>{
@@ -20,6 +21,10 @@ const todosReducer=(state=initialState, action)=>{
         case DELETETODO:return{
             ...state,
             todos: state.todos.filter(el=> el.id!== action.payload )
+        }
+        case DONETODO: return{
+            ...state,
+            todos: state.todos.map(el=>  el.id=== action.payload ?  {...el, isDone:!el.isDone }:el )
         }
     
         default:return state

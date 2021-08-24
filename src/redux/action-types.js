@@ -1,1 +1,2 @@
 export const DELETETODO='DELETTODO'
+export const DONETODO='DONETODO'
