@@ -19,6 +19,7 @@ const dispatch=useDispatch()
       <div>
         <button onClick={()=>{ dispatch(doneHandler(task.id)) }} >Done</button>
         <button onClick={()=>dispatch(deleteHandler(task.id)) }  >Del</button>
+        <button> Edit</button>
       </div>
     </div>
   );

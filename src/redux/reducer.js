@@ -1,4 +1,4 @@
-import { DELETETODO,DONETODO } from "./action-types"
+import { ADDTODO, DELETETODO,DONETODO } from "./action-types"
 
 const initialState={
     todos:[
@@ -25,6 +25,11 @@ const todosReducer=(state=initialState, action)=>{
         case DONETODO: return{
             ...state,
             todos: state.todos.map(el=>  el.id=== action.payload ?  {...el, isDone:!el.isDone }:el )
+        }
+
+        case ADDTODO: return{
+            ...state,
+            todos: [...state.todos, action.payload]
         }
     
         default:return state

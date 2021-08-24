@@ -1,4 +1,5 @@
-import { DELETETODO, DONETODO } from "./action-types"
+
+import { ADDTODO, DELETETODO, DONETODO } from "./action-types"
 
 
 export const deleteHandler=(idt)=>{
@@ -12,5 +13,11 @@ export const doneHandler=(idt)=>{
     return{
         type:DONETODO,
         payload:idt
+    }
+}
+export const addHandler=(newTask)=>{
+    return{
+        type:ADDTODO,
+        payload:newTask
     }
 }
