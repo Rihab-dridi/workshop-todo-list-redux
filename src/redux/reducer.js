@@ -33,7 +33,7 @@ const todosReducer=(state=initialState, action)=>{
         }
     case EDITTODO:return{
         ...state, 
-        todos:state.todos.map(todo=> todo.idt=== action.payload.idt? {...todo, text:action.payload.editText}:todo )
+        todos:state.todos.map(todo=> todo.id===action.payload.idt? {...todo, text:action.payload.editText}:todo )
     }
         default:return state
            
