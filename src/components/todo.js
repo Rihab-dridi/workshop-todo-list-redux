@@ -25,3 +25,6 @@ const dispatch=useDispatch()
     </div>
   );
 }
+
+
+// we only call the actions and asign values to its parameters 
