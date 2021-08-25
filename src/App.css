@@ -57,7 +57,7 @@ button:hover {
   width: 85%;
   margin: auto;
 }
-.todo-container button{
+.todo-container button, .toggle{
   padding: 10px 20px;
   background-color: rgba(184, 184, 228, 0.068);
   color:rgb(100, 98, 98);
@@ -79,4 +79,10 @@ button:hover {
 .AddTodo{
   padding-top: 50px;
   
+}
+.btns{
+  display: flex;
+}
+form{
+  background-color: whitesmoke;
 }

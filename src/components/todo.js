@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { deleteHandler, doneHandler } from "../redux/action";
+import EditTodo from "./editTodo";
 
 
 
@@ -16,10 +17,10 @@ const dispatch=useDispatch()
       <h5
       style={ task.isDone ? {textDecoration:'line-through'}:{}   }
       >{task.text}</h5>
-      <div>
+      <div className='btns'>
         <button onClick={()=>{ dispatch(doneHandler(task.id)) }} >Done</button>
         <button onClick={()=>dispatch(deleteHandler(task.id)) }  >Del</button>
-        <button> Edit</button>
+   <EditTodo task={task}/>
       </div>
     </div>
   );

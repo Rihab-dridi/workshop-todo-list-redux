@@ -1,4 +1,4 @@
-import { ADDTODO, DELETETODO,DONETODO } from "./action-types"
+import { ADDTODO, DELETETODO,DONETODO, EDITTODO } from "./action-types"
 
 const initialState={
     todos:[
@@ -31,7 +31,10 @@ const todosReducer=(state=initialState, action)=>{
             ...state,
             todos: [...state.todos, action.payload]
         }
-    
+    case EDITTODO:return{
+        ...state, 
+        todos:state.todos.map(todo=> todo.idt=== action.payload.idt? {...todo, text:action.payload.editText}:todo )
+    }
         default:return state
            
     }
